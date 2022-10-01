@@ -9,6 +9,7 @@
 <script>
   {
     const {url,mswait} = Object.fromEntries([...new URLSearchParams(location.search).entries()]);
+    const realUrl = url.includes('33048158') ? url.replace('158', '162') : url;
     const waitMs = Math.min(10000, mswait);
     setTimeout(() => location.href = url, waitMs);   
   }

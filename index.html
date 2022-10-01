@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<style>
+  :root {
+    font-family: system-ui, sans-serif;
+  }
+</style>
+<title>Redirect-as-a-Service</title>
+<h1>Redirecting&hellip;</h1>
+<script>
+  {
+    const {url,mswait} = Object.fromEntries([...new URLSearchParams(location.search).entries()]);
+    const waitMs = Math.min(10000, mswait);
+    setTimeout(() => location.href = url, waitMs);   
+  }
+</script>
